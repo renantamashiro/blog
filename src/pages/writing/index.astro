@@ -2,10 +2,10 @@
 import { getCollection } from "astro:content";
 import BaseHead from "../../components/BaseHead.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import { SITE_DESCRIPTION, SITE_TITLE, BASE } from "../../consts";
 import Sidebar from "../../components/Sidebar.astro";
 
-const posts = (await getCollection("blog")).sort(
+const posts = (await getCollection("writing")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
@@ -24,7 +24,7 @@ const posts = (await getCollection("blog")).sort(
           {
             posts.map((post) => (
               <li>
-                <a href={`/blog/${post.id}/`}>
+                <a href={`${BASE}/writing/${post.id}/`}>
                   <div class="article-item">
                     <span class="article-title">{post.data.title}</span>
                     <span class="date">
