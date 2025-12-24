@@ -1,0 +1,21 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Sidebar from "../../components/Sidebar.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+
+  <body>
+    <main>
+      <Sidebar />
+      <section>
+        <p>HI! I'm a developer living in São Paulo/Brazil.</p>
+        <p>I have been working on bean.</p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -7,7 +7,7 @@ import HeaderLink from "./HeaderLink.astro";
   <nav>
     <h2><a href="/blog">{SITE_TITLE}</a></h2>
     <div class="internal-links">
-      <HeaderLink href="/blog">About</HeaderLink>
+      <HeaderLink href="/blog/about">About</HeaderLink>
       <HeaderLink href="/blog/writing">Writing</HeaderLink>
     </div>
   </nav>
@@ -40,8 +40,21 @@ import HeaderLink from "./HeaderLink.astro";
     display: flex;
     flex-direction: column;
   }
+
   .sidebar {
     display: flex;
     justify-content: flex-end;
+  }
+
+  @media (max-width: 720px) {
+    nav {
+      position: unset;
+    }
+    .sidebar {
+      justify-content: flex-start;
+    }
+    .internal-links {
+      display: block;
+    }
   }
 </style>
